@@ -1,2 +1,4 @@
 tests/
+.spreadsheet-work/
+outputs/
 .venv/

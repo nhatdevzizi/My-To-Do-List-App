@@ -1,5 +1,4 @@
 from asyncio import tasks
-
 from models import Task
 
 class TaskManager:
@@ -11,9 +10,8 @@ class TaskManager:
     def get_next_id(self):
         if not self.tasks:
             return 1
-        return max(task.id for task in self.tasks) + 1
+        return max(task.task_id for task in self.tasks) + 1
 
-    #Initializing
     def add_task(self, tittle, description = "", duration = 0):
         new_task_id = self.get_next_id()
         new_task = Task(task_id = new_task_id,tittle = tittle,description = description,duration = duration)
@@ -23,7 +21,7 @@ class TaskManager:
 
     def get_task(self,task_id):
         for task in self.tasks:
-            if task.id == task_id:
+            if task.task_id == task_id:
                 return task
         return None
 
@@ -34,7 +32,6 @@ class TaskManager:
         task.title = title
         task.description = description
         task.duration = duration
-
         self.repository.save(self.task)
         return task
 
@@ -58,5 +55,7 @@ class TaskManager:
 
     def listing_failed_tasks(self):
         return [tasks for task in self.tasks if task.completed == False]
+
+
 
 
