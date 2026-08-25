@@ -12,12 +12,14 @@ class TaskManager:
             return 1
         return max(task.task_id for task in self.tasks) + 1
 
-    def add_task(self, tittle, description = "", duration = 0):
+    def add_task(self, title, description = "", duration = 0):
         new_task_id = self.get_next_id()
-        new_task = Task(task_id = new_task_id,tittle = tittle,description = description,duration = duration)
+        new_task = Task(task_id = new_task_id, title= title, description = description, duration = duration)
+
         self.tasks.append(new_task)
         self.repository.save(new_task)
         return new_task
+
 
     def get_task(self,task_id):
         for task in self.tasks:
@@ -25,11 +27,11 @@ class TaskManager:
                 return task
         return None
 
-    def update_task(self,task_id, title,description,duration):
+    def update_task(self,task_id, tittle,description,duration):
         task = self.get_task(task_id)
         if task is None:
             return False
-        task.title = title
+        task.title = tittle
         task.description = description
         task.duration = duration
         self.repository.save(self.task)
