@@ -45,9 +45,14 @@ class TaskManager:
         task = self.get_task(task_id)
         if task is None:
             return False
-        task.completed()
         self.repository.save(self.task)
         return True
+
+    def filter_task(self,task_id):
+        task = self.get_task(task_id)
+        if task is None:
+            raise TypeError("No task was found")
+        return task
 
     def listing_all_tasks(self):
         return self.tasks.copy()

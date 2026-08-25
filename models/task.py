@@ -19,6 +19,7 @@ class Task:
             duration = 0
             raise ValueError("Task duration cannot be negative")
         return duration
+
     #Task behaviors
     def change_priority(self, new_priority: int):
         self.priority = new_priority
