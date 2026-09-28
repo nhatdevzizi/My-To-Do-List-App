@@ -1,0 +1,14 @@
+{
+  "next_id": 2,
+  "tasks": [
+    {
+      "task_id": 1,
+      "title": "Khởi tạo",
+      "duration": 1,
+      "category": "học tập",
+      "description": "Test",
+      "priority": 5,
+      "is_completed": true
+    }
+  ]
+}

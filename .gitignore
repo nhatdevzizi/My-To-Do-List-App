@@ -1,4 +1,5 @@
-tests/
 .spreadsheet-work/
 outputs/
 .venv/
+__pycache__/
+*.pyc
