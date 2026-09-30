@@ -121,6 +121,17 @@ class TestWorkflow(unittest.TestCase):
         self.assertEqual(result.returncode, 0, result.stderr.decode("utf-8", errors="replace"))
         self.assertIn("Thêm".encode("utf-8"), result.stdout)
 
+    def test_module_entrypoint_starts_with_legacy_windows_output_encoding(self):
+        env = os.environ.copy()
+        env["PYTHONIOENCODING"] = "cp1252"
+        project_root = Path(__file__).resolve().parents[1]
+        result = subprocess.run(
+            [sys.executable, "-m", "ui.cli"],
+            input=b"0\n", capture_output=True, cwd=project_root, env=env, timeout=10,
+        )
+        self.assertEqual(result.returncode, 0, result.stderr.decode("utf-8", errors="replace"))
+        self.assertIn("Thêm".encode("utf-8"), result.stdout)
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -1,14 +1,59 @@
 {
-  "next_id": 2,
+  "next_id": 8,
   "tasks": [
     {
-      "task_id": 1,
-      "title": "Khởi tạo",
-      "duration": 1,
-      "category": "học tập",
-      "description": "Test",
+      "task_id": 2,
+      "title": "Giáo án Training C D26",
+      "duration": 90,
+      "category": "ITIS",
+      "description": "Tổ chức chương trình sử dụng Hàm - Truyền tham trị và tham chiếu",
       "priority": 5,
+      "is_completed": false
+    },
+    {
+      "task_id": 3,
+      "title": "Hoàn thành Demo sản phẩm Dừng Xem Hỏi",
+      "duration": 60,
+      "category": "Others",
+      "description": "Sửa phần Demo và fix lại game",
+      "priority": 3,
       "is_completed": true
+    },
+    {
+      "task_id": 4,
+      "title": "Quyển đề tài sinh viên",
+      "duration": 120,
+      "category": "Lab",
+      "description": "Hoàn thành quyển đề tài sinh viên ",
+      "priority": 3,
+      "is_completed": false
+    },
+    {
+      "task_id": 5,
+      "title": "Hoàn thành bài CodePTIT TRR2",
+      "duration": 90,
+      "category": "CTCN",
+      "description": "Chuẩn bị ôn thi kiểm tra giữa kì TRR2",
+      "priority": 4,
+      "is_completed": false
+    },
+    {
+      "task_id": 6,
+      "title": "Hoàn thành bài tập Pháp luật",
+      "duration": 90,
+      "category": "PTIT",
+      "description": "Hoàn thành bài của Nhóm Pháp Luật (20%)",
+      "priority": 4,
+      "is_completed": false
+    },
+    {
+      "task_id": 7,
+      "title": "Ôn Điện tử số",
+      "duration": 120,
+      "category": "PTIT",
+      "description": "Khả năng kiểm tra giữa kì T6",
+      "priority": 5,
+      "is_completed": false
     }
   ]
 }

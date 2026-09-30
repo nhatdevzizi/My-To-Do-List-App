@@ -6,6 +6,12 @@ A small Python task manager with local JSON storage. Run it with:
 python main.py
 ```
 
+You can also launch it without `main.py`:
+
+```powershell
+python -m ui.cli
+```
+
 The menu supports adding, viewing, listing, editing, deleting, completing,
 reopening, filtering, and sorting tasks. A title is required; duration is a
 non-negative number of minutes, and priority is an integer from 0 to 5.

@@ -1,6 +1,7 @@
 """Interactive command-line interface for task management."""
 
 from pathlib import Path
+import sys
 
 from repositories.task_repository import TaskRepository
 from services.task_manager import TaskManager
@@ -125,9 +126,15 @@ def run_cli(manager, input_fn=input, output_fn=print):
 
 
 def main():
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8")
     try:
         manager = TaskManager(TaskRepository(JsonStorage(DATA_FILE)))
     except (ValueError, OSError) as exc:
         print(f"Lỗi khi nạp dữ liệu: {exc}")
         return 1
     return run_cli(manager)
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
